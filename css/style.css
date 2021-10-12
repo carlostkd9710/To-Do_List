@@ -1,0 +1,84 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightslategray;
+    color: white;
+}
+.container{
+    padding: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:lightgrey;
+    color: darkslategrey;
+    border-radius: 20px;
+}
+.container h1{margin-top: 10px;
+    text-align: center;
+    color: darkslategrey;
+}
+.addtask form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+}
+#ul li{
+    list-style: none;
+    text-align: center;
+    border-radius: 15px;
+    width: 100%;
+    color: darkslategrey;
+}
+.li{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+li{
+    display: flex;
+    margin-bottom: 5px;
+    background-color: ivory;
+}
+#estado{
+    text-align: center;
+}
+#estado2{
+    text-align: center;
+}
+.btn-delete {
+    margin-left: auto;
+    border: none;
+    background-color: #e31746;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em;
+  }
+  .btn-delete:hover{
+    cursor: pointer;
+    background-color: lightseagreen;
+  }
+  .btn{
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: teal;
+    font-size: 1.4rem;
+    outline: none;
+  }
+  .btn:hover{
+    cursor: pointer;
+    background-color: darkcyan;
+  }
+  .container #input{
+      border-radius: 5px;
+  }
