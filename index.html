@@ -20,23 +20,38 @@
           </nav>
     </header>
     <main>
-        <div class="container">
-            <h1>Lista de tareas</h1>
-            <div class="addtask">
-                <form action="">
-                    <input id="input" type="text" autocomplete="off" placeholder="Añadir tarea">
-                    <button id="button" class="btn btn-success">+</button>
-                </form>
-            </div>
-            <div id="ul" class="li">
-                <ul>
+        <div class="container row">
+            <div class="col-6">
+                <div id="h1">
+                    <h1>Bienvenido a tu lista de tareas</h1>
+                </div>
+                <div id="ul" class="li">
+                    <ul>
 
-                </ul>
+                    </ul>
+                </div>
+            <hr>
             </div>
-            <div id="estado" class="estado">
-                <p id="res-task">Sin tareas pendientes</p>
+            <div class="container1 col-6">
+                <div id="h1">
+                    <h1>Tarea</h1>
+                </div>
+                <div class="addtask">
+                    <form action="">
+                        <input id="input" class="form-control" type="text" autocomplete="off" placeholder="Añadir tarea"><br>
+                        <button id="button" class="btn btn-success">Agregar</button>
+                    </form>
+                </div>
+                <div id="estado" class="estado">
+                    <p id="res-task">Sin tareas pendientes</p>
+                </div>
+                <div id="estado2"></div>
             </div>
-            <div id="estado2"></div>
+            <div id="edittask">
+                <input id="input" class="form-control" type="text" autocomplete="off" placeholder="Editar tarea">
+                <button id="button-edit" class="btn2 btn-success">Editar</button>
+            </div>
+            <div id="listar"></div>
         </div>
     </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
