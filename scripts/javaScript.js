@@ -6,18 +6,20 @@ const addButton = document.querySelector('.btn');
 const editButton = document.querySelector('.btn2');
 const ul = document.querySelector('ul');
 const estado = document.querySelector('.estado');
-let tarea;
 let lista = document.getElementById('listar')
 edittask.style.display = "none";
 
 addButton.addEventListener('click', (event) => {
     event.preventDefault();
-
+    var texto1 = tipoTarea();
     const texto = input.value;
     if (texto !== "") {
         const li = document.createElement('li');
         const p = document.createElement('p');
+        const p1 = document.createElement('p');
+        p1.textContent =texto1;
         p.textContent = texto;
+        li.appendChild(p1);
         li.appendChild(p);
         li.appendChild(agregarBtnEdit());
         li.appendChild(agregarBtndelete());
@@ -25,8 +27,13 @@ addButton.addEventListener('click', (event) => {
         input.value = "";
         estado.style.display = "none";
         edittask.style.display="none";
+        background();
     }
 });
+function tipoTarea(){
+    var val1 = document.getElementById("item").value;
+    return (val1)
+ }
 
 function agregarBtndelete() {
     const deleteBtn = document.createElement('button');
@@ -55,62 +62,49 @@ function agregarBtnEdit() {
     editBtn.textContent = "Edit";
     editBtn.className = "btn-edit";
 
-    editBtn.addEventListener('click',(eve)=>{
-        const deleteItem = eve.target.parentElement;
-        ul.removeChild(deleteItem);
-        const totalItems = document.querySelectorAll('li');
-        if(totalItems.length === 0){
-            edittask.style.display = "none";
-            estado.style.display = "block";
-            document.getElementById('estado2').innerHTML='Felicidades has finalizado todas tus tareas';
-        }
+    editBtn.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const pruebaItem = ev.target.parentElement;
+        ul.replaceChild(pruebaItem) = "Remplazado"
+        console.log(pruebaItem);
+        edittask.style.display = "block";
     });
+
     return editBtn;
 }
 
-addButton.addEventListener('click', (ev) => {
-    edittask.style.display = "block";
-    const texto1 = input.value;
-    if (texto1 !== "") {
-        const li = document.createElement('li');
-        const p = document.createElement('p');
-        p.textContent = texto1;
-        li.appendChild(p);
-        li.appendChild(agregarBtnEdit());
-        li.appendChild(agregarBtndelete());
-        ul.appendChild(li);
-        input2.value = "";
-        estado.style.display = "none";
-        alert("ENTRE");
+function background(){
+    color = document.getElementById("item").value;
+    if (color === "primary"){
+        alert("item primary")
+        document.getElementById("listar").style.backgroundColor="#0000ff";
     }
-});
-
-addButton.addEventListener('click', capturarDatos)
-function capturarDatos(){
-    tarea = document.getElementById('input').value;
-    guardarLocalStorage(tarea)
-    listarDatos()
-    console.log(tarea);
+    if (color === "secondary"){
+        alert("item secondary")
+        document.getElementById("listar").style.backgroundColor= "#ff0c00";
+    }
+    if (color === "success"){
+        alert("item success")
+        document.getElementById("listar").style.backgroundColor="#0000ff";
+    }
+    if (color === "danger"){
+        alert("item danger")
+        document.getElementById("listar").style.backgroundColor= "#ff0c00";
+    }
+    if (color === "warning"){
+        alert("item warning")
+        document.getElementById("listar").style.backgroundColor="#0000ff";
+    }
+    if (color === "info"){
+        alert("item info")
+        document.getElementById("listar").style.backgroundColor= "#ff0c00";
+    }
+    if (color === "light"){
+        alert("item light")
+        document.getElementById("listar").style.backgroundColor="#0000ff";
+    }
+    if (color === "dark"){
+        alert("item dark")
+        document.getElementById("listar").style.backgroundColor= "#ff0c00";
+    }
 }
-
-function guardarLocalStorage(tarea){
-    localStorage.setItem('Tarea',tarea)
-}
-
-function listarDatos(){
-    let tas = localStorage.getItem('Tarea')
-
-     lista.innerHTML = `<table class="table">
-     <thead>
-         <tr>
-             <th>Tarea</th>
-         </tr>
-     </thead>
-     <tbody>
-         <tr>
-             <td>${tas}</td>
-         </tr>
-     </tbody>
- </table>
- `
- }

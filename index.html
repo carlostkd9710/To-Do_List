@@ -9,16 +9,6 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-secondary">
-            <div class="container-fluid">
-              <a class="navbar-brand text-white" href="https://www.tecno.co/">
-                <img src="./img/icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                To-Do List ¡Tecno, más que soluciones!
-              </a>
-            </div>
-          </nav>
-    </header>
     <main>
         <div class="container row">
             <div class="col-6">
@@ -38,9 +28,22 @@
                 </div>
                 <div class="addtask">
                     <form action="">
-                        <input id="input" class="form-control" type="text" autocomplete="off" placeholder="Añadir tarea"><br>
-                        <button id="button" class="btn btn-success">Agregar</button>
-                    </form>
+                        <div class="input-group mb-3">
+                            <select name="item" id="item">
+                                <option value="secondary">Item</option>
+                                <option value="primary">Primary</option>
+                                <option value="secondary">Secondary</option>
+                                <option value="success">Success</option>
+                                <option value="danger">Danger</option>
+                                <option value="warning">Warning</option>
+                                <option value="info">Info</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                            <input id="input" class="form-control" type="text" autocomplete="off" placeholder="Añadir tarea">
+                        </div>
+                    </form><br>
+                    <button id="button" class="btn btn-success">Agregar</button>
                 </div>
                 <div id="estado" class="estado">
                     <p id="res-task">Sin tareas pendientes</p>
@@ -48,8 +51,8 @@
                 <div id="estado2"></div>
             </div>
             <div id="edittask">
-                <input id="input" class="form-control" type="text" autocomplete="off" placeholder="Editar tarea">
-                <button id="button-edit" class="btn2 btn-success">Editar</button>
+                <input id="inputEdit" class="form-control" type="text" autocomplete="off" placeholder="Editar tarea">
+                <button id="button-edit" class="btn2 btn-success" onclick="funcionedit()">Editar</button>
             </div>
             <div id="listar"></div>
         </div>
